@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+results/*.txt
+stats.log
+/tmp/mininet_pids.env
