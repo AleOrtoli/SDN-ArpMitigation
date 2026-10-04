@@ -84,7 +84,7 @@ Lo script `test_script.py` si aggancia ai nodi attivi tramite `mnexec -a <PID>` 
 
 1. **Terminale 1 (Controller Neutro di Baseline):**
    ```bash
-    ryu-manager controllerSenzaQoS.py
+   ryu-manager controllerSenzaQoS.py
    ```
 
 2. **Terminale 2 (Topologia Speculare No-QoS):**
