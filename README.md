@@ -38,6 +38,8 @@ sudo pip3 install ryu eventlet==0.30.2
 
 # Avvio del servizio Open vSwitch
 sudo systemctl enable --now openvswitch-switch
+```
+
 
 ## Istruzioni per l'Esecuzione e la Riproducibilità
 
