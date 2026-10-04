@@ -53,7 +53,9 @@ Questa modalità esegue la suite completa, genera il traffico, inietta l'attacco
 
 #### Scenario A: Rete di Produzione (CON QoS HTB)
 1. Terminale 1 (Controller SDN):
-   #bash ryu-manager controller.py
+   ```bash
+   ryu-manager controller.py
+    ```
 
 2. Terminale 2 (Testbench Automatizzato):
     ```bash
@@ -71,7 +73,7 @@ Questa modalità esegue la suite completa, genera il traffico, inietta l'attacco
    cat results/ping_after_attack.txt # Verifica 100% packet loss per l'attaccante
    cat results/ovs_queue_stats.txt   # Contatori hardware code HTB
     ```
-    
+
 #### Scenario B: Benchmark di Controllo (SENZA QoS)
 1. Terminale 1 (Controller Neutro):
    ryu-manager controller_noqos.py
