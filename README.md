@@ -55,7 +55,7 @@ Lo script `test_script.py` si aggancia ai nodi attivi tramite `mnexec -a <PID>` 
 
 ---
 
-### Scenario A: Test della Rete di Produzione (CON QoS HTB)
+### Scenario A: Test della Rete (CON QoS HTB)
 1. **Terminale 1 (Controller SDN con QoS):**
 ```bash
    ryu-manager controller.py
@@ -64,13 +64,11 @@ Lo script `test_script.py` si aggancia ai nodi attivi tramite `mnexec -a <PID>` 
 2. **Terminale 2 (Topologia con Code HTB):**
    ```bash
    sudo mn -c
-   sudo python3 topo.py
-   *(La CLI mininet> rimane attiva per consentire comandi diagnostici quali pingall)*
+   sudo python3 topo.py #(La CLI mininet> rimane attiva per consentire comandi diagnostici quali pingall)
     ```
 3. **Terminale 3 (Suite di Test Unificata):**
    ```bash
-   sudo python3 test_script.py
-   * Al prompt: digitare Q e premere Invio.
+   sudo python3 test_script.py #Al prompt: digitare Q e premere Invio.
     ```
 4. **Ispezione dei Risultati Generati:**
    ```bash
@@ -96,8 +94,7 @@ Lo script `test_script.py` si aggancia ai nodi attivi tramite `mnexec -a <PID>` 
     ```
 3. **Terminale 3 (Suite di Test Unificata):**
    ```bash
-   sudo python3 test_script.py
-   * Al prompt: digitare N (o premere direttamente Invio).
+   sudo python3 test_script.py #Al prompt: digitare N (o premere direttamente Invio).
     ```
 4. **Ispezione dei Risultati Generati:**
    ```bash
