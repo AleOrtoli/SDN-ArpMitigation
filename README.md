@@ -53,21 +53,25 @@ Questa modalità esegue la suite completa, genera il traffico, inietta l'attacco
 
 #### Scenario A: Rete di Produzione (CON QoS HTB)
 1. Terminale 1 (Controller SDN):
-   ryu-manager controller.py
+   #bash ryu-manager controller.py
 
 2. Terminale 2 (Testbench Automatizzato):
+    ```bash
    sudo mn -c
    mkdir -p results
    sudo python3 test_script.py
+   ```
 
 3. Ispezione dei Risultati Generati:
+     ```bash
    ls -la results/
    cat results/h2_iperf.txt          # Statistiche SCADA (loss 0.0%, jitter < 1.2 ms)
    cat results/h3_iperf.txt          # Statistiche bulk transfer (loss ~33%)
    cat results/arp_attack.txt        # Trigger dell'attacco ARP
    cat results/ping_after_attack.txt # Verifica 100% packet loss per l'attaccante
    cat results/ovs_queue_stats.txt   # Contatori hardware code HTB
-
+    ```
+    
 #### Scenario B: Benchmark di Controllo (SENZA QoS)
 1. Terminale 1 (Controller Neutro):
    ryu-manager controller_noqos.py
