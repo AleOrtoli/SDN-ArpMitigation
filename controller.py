@@ -58,13 +58,9 @@ class QoSARPSecurityApp(app_manager.RyuApp):
         ofproto = datapath.ofproto
         parser = datapath.ofproto_parser
         inst = [parser.OFPInstructionActions(ofproto.OFPIT_APPLY_ACTIONS, actions)]
-        if buffer_id:
-            mod = parser.OFPFlowMod(datapath=datapath, buffer_id=buffer_id,
-                                    priority=priority, match=match,
-                                    instructions=inst)
-        else:
-            mod = parser.OFPFlowMod(datapath=datapath, priority=priority,
-                                    match=match, instructions=inst)
+        
+        mod = parser.OFPFlowMod(datapath=datapath, priority=priority, match=match, instructions=inst)
+
         datapath.send_msg(mod)
 
     @set_ev_cls(ofp_event.EventOFPPacketIn, MAIN_DISPATCHER)
@@ -113,9 +109,7 @@ class QoSARPSecurityApp(app_manager.RyuApp):
         if out_port != ofproto.OFPP_FLOOD:
             match = parser.OFPMatch(in_port=in_port, eth_dst=dst)
             self.add_flow(datapath, 10, match, actions, msg.buffer_id)
-            if msg.buffer_id != ofproto.OFP_NO_BUFFER:
-                return
-
+            
         data = None
         if msg.buffer_id == ofproto.OFP_NO_BUFFER:
             data = msg.data
