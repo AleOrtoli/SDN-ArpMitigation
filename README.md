@@ -23,7 +23,7 @@ L'infrastruttura emula una rete industriale multi-subnet basata su OpenFlow 1.3 
 
 ## Requisiti e Dipendenze Software
 
-Il testbench è validato su ambiente Linux (**Ubuntu 20.04/22.04 LTS** o Mininet VM):
+Il testbench è validato su ambiente Linux (**Ubuntu 20.04/22.04 LTS**):
 
 ```bash
 # Aggiornamento pacchetti di sistema
