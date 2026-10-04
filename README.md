@@ -57,7 +57,7 @@ Lo script `test_script.py` si aggancia ai nodi attivi tramite `mnexec -a <PID>` 
 
 ### Scenario A: Test della Rete (CON QoS HTB)
 1. **Terminale 1 (Controller SDN con QoS):**
-```bash
+    ```bash
    ryu-manager controller.py
    ```
 
